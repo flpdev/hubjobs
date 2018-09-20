@@ -40,33 +40,34 @@ $('#btnsesc').click(function(){
     
 })
 
-/*BOM FUTURO ================================================== */
+/*BOM FUTURO ======================================================== */
 $('#btnbomfuturo').click(function(){
     
     $('#tabelaBomFuturo').empty();
-    var vagasBomFuturo = $('#bomfuturo').find('li').removeAttr('class');
-    var bomFuturoLinha = [];
-    
+    var vagasBomFuturo = $('#bomfuturo').find('.accordion-group');
+    var bomFuturoLinha = [];   
+
+    bomFuturoLinha.push("<div class='alert alert-danger text-center' role='alert'>");
+    bomFuturoLinha.push("Para acessar os editais e arquivos <a href='http://www.bomfuturo.com.br/trabalhe-conosco' target='_blank' class='alert-link'>CLIQUE AQUI</a>");
+    bomFuturoLinha.push("</div>");
+
     bomFuturoLinha.push("<table class='table'>");
     bomFuturoLinha.push("<thead>");
     bomFuturoLinha.push('<tr>');
     bomFuturoLinha.push("<th class='text-center'>Vaga</th>");
     bomFuturoLinha.push("<th class='text-center'>Dados</th>");
-    bomFuturoLinha.push("<th class='text-center'>Detalhes</th>");
     bomFuturoLinha.push('</tr>');
     bomFuturoLinha.push('</thead>');
     bomFuturoLinha.push('<tbody>'); 
 
     for(var i = 0; i <= vagasBomFuturo.length-1;i++){
         
-        var vagaTitulo = $(vagasBomFuturo[i]).find('.title').text();
-        var vagaLocal = $(vagasBomFuturo[i]).find('p').text();
-        var vagaLink = $(vagasBomFuturo[i]).find('a').attr('href');
+        var vagaTitulo = $(vagasBomFuturo[i]).find('button').text();
+        var vagaLocal = $(vagasBomFuturo[i]).find('.panel-body').find('.active').text();
 
         bomFuturoLinha.push('<tr>');
-        bomFuturoLinha.push('<td>'+vagaTitulo+'</td>');
+        bomFuturoLinha.push('<td>'+$.trim(vagaTitulo)+'</td>');
         bomFuturoLinha.push('<td>'+vagaLocal+'</td>');
-        bomFuturoLinha.push("<td><a href='"+vagaLink+"'target='_blank' class='btn btn-primary'>Detalhes</a></td>")
         
     }
     
@@ -76,7 +77,9 @@ $('#btnbomfuturo').click(function(){
     
 })
 
+
 /*SENAC ======================================================= */    
+/*
 $('#btnsenac').click(function(){
 
     $('#tabelaSenac').empty();
@@ -117,7 +120,7 @@ $('#btnsenac').click(function(){
     senacLinha.push('</table>');    
     $('#tabelaSenac').append($(senacLinha.join('')));
 })
-
+*/
 /*FIEMT ======================================================= */
 $('#btnfiemt').click(function(){
     

@@ -14,16 +14,16 @@ echo "<div id='sescvagas' class='oculto'>";
 foreach($html->find("table.table-striped") as $element) 
        echo utf8_encode($element). '<br>';
 echo "</div>";
-
+/*
 $html = str_get_html(file_get_contents('https://www.mt.senac.br/trabalhe.php'));
 echo "<div id='senac' class='oculto'>";
 foreach($html->find("table.bordasimples") as $element) 
        echo $element. '<br>';
 echo "</div>";
-
-$html = str_get_html(file_get_contents('https://www.indeedjobs.com/gupo-bom-futuro/jobs'));
+*/
+$html = str_get_html(file_get_contents('http://www.bomfuturo.com.br/trabalhe-conosco'));
 echo "<div id='bomfuturo' class='oculto'>";
-foreach($html->find(".cp-list li") as $element)
+foreach($html->find(".vagas") as $element)
        echo $element. '<br>';
 echo "</div>";
 
